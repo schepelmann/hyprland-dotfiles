@@ -175,7 +175,7 @@
   },
   "custom/power": {
     "format": "󰐥",
-    "on-click": "~/.config/wofi/scripts/power.sh",
+    "on-click": "~/.config/rofi/powermenu.sh",
     "tooltip": false,
   },
   "custom/notification": {
