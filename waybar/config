@@ -27,7 +27,7 @@
   ],
   "custom/icon": {
     "format": "󰣇",
-    "on-click": "wofi",
+    "on-click": "rofi -show drun",
     "tooltip": false
   },
   "cpu": {
