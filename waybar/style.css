@@ -40,9 +40,9 @@
   margin: 4px 2px;
 }
 
-#cpu { color: @peach; }
-#memory { color: @mauve; }
-#temperature { color: @peach; }
+#cpu { color: @sapphire; }
+#memory { color: @sky; }
+#temperature { color: @teal; }
 
 /* ------ Window Title ------ */
 #window { 
@@ -94,7 +94,7 @@ window#waybar {
 
 /* ------ Pulseaudio ------ */
 #pulseaudio {
-  color: @green;
+  color: @blue;
   background-color: @surface1;
   padding: 2px 5px;
   margin: 4px 2px;
@@ -102,7 +102,7 @@ window#waybar {
 
 /* ------ Backlight ------ */
 #backlight {
-  color: @sapphire;
+  color: @lavender;
   background-color: @surface1;
   padding: 2px 5px;
   margin: 4px 2px;
@@ -110,15 +110,23 @@ window#waybar {
 
 /* ------ Network ------ */
 #network {
-  color: @mauve;
+  color: @green;
   background-color: @surface1;
   padding: 2px 5px;
   margin: 4px 2px;
 }
 
+/* ------ Timer ------ */
+#custom-timer {
+    padding-left: 10px;
+  color: @text;
+  font-weight: bold;
+  font-size: 13px;
+}
+
 /* ------ Battery ------ */
 #battery {
-  color: @flamingo;
+  color: @yellow;
   background-color: @surface1;
   padding: 2px 5px;
   margin: 4px 2px;
@@ -171,7 +179,7 @@ window#waybar {
 }
 
 #idle_inhibitor {
-  color: @green;
+  color: @peach;
   background-color: @surface1;
   padding: 2px 9px;
   margin: 4px 2px;
@@ -194,7 +202,7 @@ window#waybar {
 }
 
 #custom-notification {
-  color: @teal;
+  color: @maroon;
   background-color: @surface1;
   padding: 2px 9px;
   margin: 4px 2px;

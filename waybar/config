@@ -8,7 +8,9 @@
   "margin-right": 10,
   "modules-left": [
     "custom/icon",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/separator-gap",
+    "hyprland/window"
   ],
   "modules-center": [
     "clock"
@@ -16,6 +18,8 @@
   "modules-right": [
     "backlight",
     "pulseaudio",
+    "cpu",
+    "memory",
     "temperature",
     "network",
     "battery",
@@ -30,11 +34,16 @@
     "on-click": "rofi -show drun",
     "tooltip": false
   },
+  // "cpu": {
+  //   "interval": 10,
+  //   "format": " {usage}%",
+  //   "max-length": 10,
+  //   "tooltip": false
+  // },
   "cpu": {
-    "interval": 10,
-    "format": " {usage}%",
-    "max-length": 10,
-    "tooltip": false
+    "interval": 1,
+    "format": " {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
   "clock": {
     "format": "<b>󰃭  {:%Y년 %m월 %d일 󰥔  %H시 %M분}</b> ",
@@ -54,10 +63,26 @@
       "on-scroll-down": "shift_down"
     }
   },
+  "custom/timer": {
+    "exec": "~/.config/waybar/custom-scripts/waybar_timer",
+    "exec-on-event": false,
+    "return-type": "json",
+    "format": "{icon} {0}",
+    "format-icons": {
+        "standby": "STANDBY",
+        "running": "RUNNING",
+        "paused": "PAUSE"
+    },
+    "on-click": "~/.config/waybar/custom-scripts/waybar_timer new 25 'notify-send \"Session finished\"'",
+    "on-click-middle": "~/.config/waybar/custom-scripts/waybar_timer cancel",
+    "on-click-right": "~/.config/waybar/custom-scripts/waybar_timer togglepause",
+    "on-scroll-up": "~/.config/waybar/custom-scripts/waybar_timer increase 60 || ~/.config/waybar/custom-scripts/waybar_timer new 1 'notify-send -u critical \"Timer expired\"'",
+    "on-scroll-down": "~/.config/waybar/custom-scripts/waybar_timer decrease 60"
+  },
   "memory": {
     "interval": 30,
-    "format": " {used}GiB",
-    "format-alt": " {used:0.1f}G",
+    "format": " {used}GiB",
+    "format-alt": "🖴 {used:0.1f}G",
     "max-length": 10
   },
   "temperature": {
@@ -91,6 +116,11 @@
       "8": "팔",
       "9": "구",
       "10": "십",
+      "11": "십일",
+      "12": "십이",
+      "13": "십삼",
+      "14": "십사",
+      "15": "십오",
       "urgent": ""
       // "active": ""
       // "default": ""
